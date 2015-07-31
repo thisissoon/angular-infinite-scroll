@@ -1,0 +1,9 @@
+/*! angular-sn-infinite-scroll - v0.1.0 - 2015-07-31 */
+.infinite-scroll {
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

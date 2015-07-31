@@ -1,0 +1,26 @@
+#
+# CircleCI Configuration
+#
+
+# Machine Settings
+
+machine:
+  node:
+    version: 0.12.5
+
+# Dependencies
+
+dependencies:
+  pre:
+    - npm install -g grunt-cli bower
+  override:
+    - npm -d install
+
+# Test Commands
+
+test:
+  override:
+    - grunt test:development
+    - grunt test
+  post:
+    - ./node_modules/coveralls/bin/coveralls.js < coverage/lcov.info

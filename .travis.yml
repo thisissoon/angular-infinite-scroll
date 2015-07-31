@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "0.12"
+env:
+  global:
+    - secure: RhmfgnPkrCcjOTWkfYFZS5zlBQhte2cAAtjA/bIKH4qhaLsWHHS0ApJ065PJs4H/lfslWSfnRcUpaeFq8hhr/9dMlCxFJc5CTJ2EfmV56NjsiaETtrxHdNVFtZU/DxJnSxnW4revbFkk/mM6JZ+P7XwVv+iitKhx3uRpX2/rKWA=
+    - secure: hmu/VH1viA8oPFjxBrjvnLrNa0PnfXsIKMMv9ZmgpXthdhTtuReD9rPmbnFzNh9MyCkLSZcndJakpDu9SwHVDcs5eyV72fuXHW/0htyN9eNTMyShrNIpOJe6JUqMez7MxQU9J45IJGSvbyEfrbZ20mbGGzJ41KnEZ0IfwODPcMY=
+before_install:
+  - npm install -g bower
+  - npm install -g grunt-cli
+  - npm install -g protractor && webdriver-manager update
+install:
+  - npm install
+script:
+  - grunt test:development
+  - grunt test
+  - grunt e2e --ci
+after_success:
+  - ./node_modules/coveralls/bin/coveralls.js < coverage/lcov.info
+addons:
+  sauce_connect: true
