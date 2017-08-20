@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  font-family: Roboto, sans-serif;
+}
+
+.foo {
+  border: 1px solid #333;
+  height: 300px;
+  overflow: auto;
+}
+
+li {
+  display: block;
+}
