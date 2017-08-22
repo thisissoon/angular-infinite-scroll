@@ -1,0 +1,11 @@
+<h1>Scroll down ↓</h1>
+<div
+  class="foo"
+  snInfiniteScroll
+  (onScrollEnd)="onScrollEnd()"
+  [offset]="100"
+  [disabled]="disabled">
+  <ul>
+    <li *ngFor="let item of list">{{ item }}</li>
+  </ul>
+</div>
