@@ -8,6 +8,22 @@ import 'rxjs/add/operator/map';
 import { Scroll } from '../scroll.model';
 import * as events from '../events';
 
+/**
+ * @example
+ * ```
+ * <div
+ *   class="foo"
+ *   snInfiniteScroll
+ *   (onScrollEnd)="onScrollEnd()"
+ *   [offset]="100"
+ *   [disabled]="disabled">
+ * </div>
+ * ```
+ *
+ * @export
+ * @class InfiniteScrollDirective
+ * @implements {AfterViewInit}
+ */
 @Directive({
   selector: '[snInfiniteScroll]'
 })

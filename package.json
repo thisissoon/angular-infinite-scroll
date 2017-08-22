@@ -2,7 +2,7 @@
   "name": "@thisissoon/angular-infinite-scroll",
   "version": "0.1.0",
   "private": false,
-  "description": "Simple, lightweight infinite scrolling for Angular (2/4+), with no other dependencies.",
+  "description": "Simple, lightweight infinite scrolling directive for Angular (2/4+) with no other dependencies.",
   "keywords": [
     "angular",
     "angular 2",
@@ -56,8 +56,7 @@
     "postrelease": "npm run build"
   },
   "peerDependencies": {
-    "@angular/core": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0",
-    "rxjs": ">=5.0.0 <6.0.0"
+    "@angular/core": ">=4.0.0 <5.0.0 || >=4.0.0-beta <5.0.0"
   },
   "devDependencies": {
     "@angular/common": "^4.3.4",
