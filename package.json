@@ -1,6 +1,6 @@
 {
   "name": "@thisissoon/angular-infinite-scroll",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "private": false,
   "description": "Simple, lightweight infinite scrolling directive for Angular (2/4+) with no other dependencies.",
   "keywords": [
