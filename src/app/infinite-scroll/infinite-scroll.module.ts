@@ -7,11 +7,7 @@ import { InfiniteScrollDirective } from './infinite-scroll.directive';
  * emits an event when an element has been scrolled to the bottom.
  */
 @NgModule({
-  declarations: [
-    InfiniteScrollDirective
-  ],
-  exports: [
-    InfiniteScrollDirective
-  ]
+  declarations: [InfiniteScrollDirective],
+  exports: [InfiniteScrollDirective]
 })
-export class InfiniteScrollModule { }
+export class InfiniteScrollModule {}

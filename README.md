@@ -1,28 +1,27 @@
 # Angular Infinite Scroll
+
 [![Build Status][travis-badge]][travis-badge-url]
 [![Coverage Status][coveralls-badge]][coveralls-badge-url]
+[![code style: prettier][prettier-badge]][prettier-badge-url]
 
 A simple, lightweight infinite scrolling directive for [Angular][angular] which emits an event when an element has been scrolled to the bottom.
 
 This is a simple library for [Angular][angular], implemented in the [Angular Package Format v5.0](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit#heading=h.k0mh3o8u5hx).
-
 
 ## Install
 
 `npm i @thisissoon/angular-infinite-scroll --save`
 
 `app.module.ts`
+
 ```ts
 import { InfiniteScrollModule } from '@thisissoon/angular-infinite-scroll';
 
 @NgModule({
-  imports: [
-    InfiniteScrollModule
-  ]
+  imports: [InfiniteScrollModule]
 })
-export class AppModule { }
+export class AppModule {}
 ```
-
 
 ## Example
 
@@ -48,14 +47,12 @@ export class AppComponent {
     // Do something here
   }
 }
-
 ```
 
 ## Options
 
 * `offset` (number): distance in px from bottom of element to trigger `scrollEnd` event (default: 0)
 * `disabled` (boolean): If true directive will not trigger `scrollEnd` event
-
 
 ## Development server
 
@@ -81,10 +78,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
 [travis-badge]: https://travis-ci.org/thisissoon/angular-infinite-scroll.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/thisissoon/angular-infinite-scroll
 [coveralls-badge]: https://coveralls.io/repos/github/thisissoon/angular-infinite-scroll/badge.svg?branch=master
 [coveralls-badge-url]: https://coveralls.io/github/thisissoon/angular-infinite-scroll?branch=master
 [angular]: https://angular.io/
 [angular-inviewport]: https://github.com/thisissoon/angular-inviewport
+[prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=shield
+[prettier-badge-url]: https://github.com/prettier/prettier

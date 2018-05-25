@@ -1,6 +1,11 @@
 import {
-  Directive, AfterViewInit, OnDestroy, HostListener,
-  EventEmitter, Input, Output
+  Directive,
+  AfterViewInit,
+  OnDestroy,
+  HostListener,
+  EventEmitter,
+  Input,
+  Output
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil, filter, map } from 'rxjs/operators';
@@ -29,24 +34,20 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
    * Event that will be triggered when user has scrolled to
    * bottom of the element
    */
-  @Output()
-  public scrollEnd = new EventEmitter<void>();
+  @Output() public scrollEnd = new EventEmitter<void>();
   /**
    * An offset from the bottom of the element to trigger
    * `scrollEnd` event
    */
-  @Input()
-  public offset = 0;
+  @Input() public offset = 0;
   /**
    * Specify debounce duration in ms
    */
-  @Input()
-  public debounce = 0;
+  @Input() public debounce = 0;
   /**
    * If true then `scrollEnd` event should NOT be emitted
    */
-  @Input()
-  public disabled = false;
+  @Input() public disabled = false;
   /**
    * Emits a new value on element scroll event
    */
@@ -66,12 +67,12 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
       .pipe(
         takeUntil(this.ngUnsubscribe$),
         debounceTime(100),
-        map((scroll) => {
+        map(scroll => {
           const y = scroll.y + this.offset;
-          return {y, height: scroll.height};
+          return { y, height: scroll.height };
         }),
         filter(() => !this.disabled),
-        filter((scroll) => scroll.y >= scroll.height),
+        filter(scroll => scroll.y >= scroll.height)
       )
       .subscribe(() => this.scrollEnd.emit());
   }
@@ -79,10 +80,14 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
    * On element scroll event emit next `scroll$` observable value
    */
   @HostListener(events.eventScroll, events.eventPathScroll)
-  public onScroll(scrollY: number, scrollheight: number, offsetHeight: number): void {
+  public onScroll(
+    scrollY: number,
+    scrollheight: number,
+    offsetHeight: number
+  ): void {
     const height = scrollheight;
     const y = scrollY + offsetHeight;
-    this.scroll$.next({y, height});
+    this.scroll$.next({ y, height });
   }
   /**
    * trigger `ngUnsubscribe` complete on
