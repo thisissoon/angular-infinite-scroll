@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/thisissoon/angular-infinite-scroll/compare/v1.1.1...v2.0.0) (2018-05-25)
+
+
+### Features
+
+* **infinite-scroll:** adding angular 6 support ([17dabb9](https://github.com/thisissoon/angular-infinite-scroll/commit/17dabb9))
+
+
+### BREAKING CHANGES
+
+* **infinite-scroll:** updated peer dependencies to rxjs v6
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/thisissoon/angular-infinite-scroll/compare/v1.1.0...v1.1.1) (2017-12-04)
 
