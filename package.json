@@ -2,15 +2,16 @@
   "name": "@thisissoon/angular-infinite-scroll",
   "version": "1.1.1",
   "private": false,
-  "description": "Simple, lightweight infinite scrolling directive for Angular (2/4+) with no other dependencies.",
+  "description": "Simple, lightweight infinite scrolling directive for Angular which emits an event when an element has been scrolled to the bottom",
   "keywords": [
     "angular",
-    "angular 2",
-    "angular 4",
     "directive",
     "scrolling",
+    "infinite",
     "infinite scroll",
-    "infinite scrolling"
+    "infinite scrolling",
+    "ngx-infinite-scroll",
+    "ngx-infinite-scrolling"
   ],
   "author": "SOON_ <dorks@thisissoon.com>",
   "contributors": [
@@ -23,8 +24,8 @@
     "url": "https://github.com/thisissoon/angular-infinite-scroll"
   },
   "engines": {
-    "node": ">= 6.9.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0"
   },
   "scripts": {
     "ng": "ng",
@@ -34,28 +35,28 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "coverage": "coveralls < coverage/lcov.info",
-    "packagr": "ng-packagr -p ng-package.json",
+    "packagr": "ng-packagr -p package.json",
     "release": "standard-version",
     "postrelease": "npm run packagr"
   },
-  "dependencies": {},
+  "peerDependencies": {},
   "devDependencies": {
-    "@angular/animations": "^5.0.0",
-    "@angular/cli": "1.5.4",
-    "@angular/common": "^5.0.0",
-    "@angular/compiler": "^5.0.0",
-    "@angular/compiler-cli": "^5.0.0",
-    "@angular/core": "^5.0.0",
-    "@angular/forms": "^5.0.0",
-    "@angular/http": "^5.0.0",
-    "@angular/language-service": "^5.0.0",
-    "@angular/platform-browser": "^5.0.0",
-    "@angular/platform-browser-dynamic": "^5.0.0",
-    "@angular/router": "^5.0.0",
+    "@angular/animations": "^6.0.3",
+    "@angular/cli": "^6.0.5",
+    "@angular/common": "^6.0.3",
+    "@angular/compiler": "^6.0.3",
+    "@angular/compiler-cli": "^6.0.3",
+    "@angular/core": "^6.0.3",
+    "@angular/forms": "^6.0.3",
+    "@angular/http": "^6.0.3",
+    "@angular/language-service": "^6.0.3",
+    "@angular/platform-browser": "^6.0.3",
+    "@angular/platform-browser-dynamic": "^6.0.3",
+    "@angular/router": "^6.0.3",
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "codelyzer": "^4.0.1",
+    "codelyzer": "^4.3.0",
     "core-js": "^2.4.1",
     "coveralls": "^3.0.0",
     "jasmine-core": "~2.6.2",
@@ -67,13 +68,23 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-spec-reporter": "0.0.31",
-    "ng-packagr": "^2.0.0-rc.4",
+    "ng-packagr": "^2.4.5",
     "protractor": "~5.1.2",
-    "rxjs": "^5.5.2",
+    "rxjs": "^6.2.0",
     "standard-version": "^4.2.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2",
-    "zone.js": "^0.8.14"
+    "typescript": "~2.7.2",
+    "zone.js": "^0.8.26",
+    "@angular-devkit/build-angular": "~0.6.5"
+  },
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "src/index.ts",
+      "umdModuleIds": {
+        "rxjs": "rxjs"
+      }
+    }
   }
 }

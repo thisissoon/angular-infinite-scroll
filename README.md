@@ -2,9 +2,7 @@
 [![Build Status][travis-badge]][travis-badge-url]
 [![Coverage Status][coveralls-badge]][coveralls-badge-url]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
-
-A simple, lightweight infinite scrolling directive for [Angular (2/4+)][angular] with no other dependencies which emits and event when element has scrolled to the end.
+A simple, lightweight infinite scrolling directive for [Angular][angular] which emits an event when an element has been scrolled to the bottom.
 
 This is a simple library for [Angular][angular], implemented in the [Angular Package Format v5.0](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit#heading=h.k0mh3o8u5hx).
 
@@ -28,7 +26,7 @@ export class AppModule { }
 
 ## Example
 
-a working example can be found inside [/src](https://github.com/thisissoon/angular-infinite-scroll/tree/master/src) folder
+A working example can be found inside [/src](https://github.com/thisissoon/angular-infinite-scroll/tree/master/src) folder
 
 ### `app.component.html`
 
