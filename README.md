@@ -2,6 +2,7 @@
 
 [![Build Status][travis-badge]][travis-badge-url]
 [![Coverage Status][coveralls-badge]][coveralls-badge-url]
+[![Commitizen friendly][commitizen-badge]][commitizen]
 [![code style: prettier][prettier-badge]][prettier-badge-url]
 
 A simple, lightweight infinite scrolling directive for [Angular][angular] which emits an event when an element has been scrolled to the bottom.
@@ -78,6 +79,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Making Commits
+
+This repo uses [Commitizen CLI](http://commitizen.github.io/cz-cli/) and [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog) to create commits and generate changelogs. Instead of running `git commit` run `git cz` and follow the prompts. Changelogs will then be generated when creating new releases by running `npm run release`.
+
+## Making Releases
+
+Run `npm run release` to create a new release. This will use [Standard Version](https://github.com/conventional-changelog/standard-version) to create a new release. [Standard Version](https://github.com/conventional-changelog/standard-version) will generate / update the changelog based on commits generated using [Commitizen CLI](http://commitizen.github.io/cz-cli/), update the version number following semantic versioning rules and then commit and tag the commit for the release. Simply run `git push --follow-tags origin master`.
+
 [travis-badge]: https://travis-ci.org/thisissoon/angular-infinite-scroll.svg?branch=master
 [travis-badge-url]: https://travis-ci.org/thisissoon/angular-infinite-scroll
 [coveralls-badge]: https://coveralls.io/repos/github/thisissoon/angular-infinite-scroll/badge.svg?branch=master
@@ -86,3 +95,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [angular-inviewport]: https://github.com/thisissoon/angular-inviewport
 [prettier-badge]: https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=shield
 [prettier-badge-url]: https://github.com/prettier/prettier
+[commitizen]: http://commitizen.github.io/cz-cli/
+[commitizen-badge]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
