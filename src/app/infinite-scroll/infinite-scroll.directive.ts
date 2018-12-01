@@ -21,6 +21,7 @@ import * as events from './shared/events';
  *   snInfiniteScroll
  *   (scrollEnd)="onScrollEnd()"
  *   [offset]="100"
+ *   [debounce]="123"
  *   [disabled]="disabled">
  * </div>
  * ```
@@ -43,7 +44,7 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
   /**
    * Specify debounce duration in ms
    */
-  @Input() public debounce = 0;
+  @Input() public debounce = 100;
   /**
    * If true then `scrollEnd` event should NOT be emitted
    */
@@ -66,7 +67,7 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
     this.scroll$
       .pipe(
         takeUntil(this.ngUnsubscribe$),
-        debounceTime(100),
+        debounceTime(this.debounce),
         map(scroll => {
           const y = scroll.y + this.offset;
           return { y, height: scroll.height };
