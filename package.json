@@ -96,7 +96,8 @@
     "zone.js": "^0.8.26",
     "lint-staged": "^7.3.0",
     "stylelint-config-prettier": "^4.0.0",
-    "tslint-config-prettier": "^1.15.0"
+    "tslint-config-prettier": "^1.15.0",
+    "karma-mocha-reporter": "^2.2.5"
   },
   "ngPackage": {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",

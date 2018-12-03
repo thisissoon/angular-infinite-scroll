@@ -5,11 +5,11 @@ const { SpecReporter } = require('jasmine-spec-reporter');
 
 exports.config = {
   allScriptsTimeout: 11000,
-  specs: ['./e2e/**/*.e2e-spec.ts'],
+  specs: ['./src/**/*.e2e-spec.ts'],
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
-      args: ['--no-sandbox', '--window-size=1280,768']
+      args: ['--headless', '--no-sandbox', '--window-size=1024,768']
     }
   },
   directConnect: true,
@@ -22,7 +22,7 @@ exports.config = {
   },
   onPrepare() {
     require('ts-node').register({
-      project: 'e2e/tsconfig.e2e.json'
+      project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
     jasmine
       .getEnv()
