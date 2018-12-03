@@ -16,7 +16,8 @@
   "author": "SOON_ <dorks@thisissoon.com>",
   "contributors": [
     "Ed Opare-Aryee <ed@thisissoon.com>",
-    "James Warren <james@thisissoon.com>"
+    "James Warren <james@thisissoon.com>",
+    "Christopher Dahm <cdahm11@gmail.com>"
   ],
   "license": "MIT",
   "repository": {
@@ -32,21 +33,21 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "npm run format:check && npm run lint:ts && npm run lint:scss",
+    "lint": "yarn stylelint && yarn nglint && yarn prettier",
     "e2e": "ng e2e",
     "coverage": "coveralls < coverage/lcov.info",
     "packagr": "ng-packagr -p package.json",
     "release": "standard-version",
-    "postrelease": "npm run packagr",
-    "lint:ts": "ng lint",
-    "lint:ts:fix": "ng lint angular-infinite-scroll --fix && ng lint angular-infinite-scroll-e2e --fix",
-    "lint:scss": "stylelint --syntax scss \"src/**/*.scss\"",
-    "format:check": "prettier --config ./.prettierrc -l \"{src/{app,environments,assets}/**/*.{ts,json,css,scss},./*.{ts,js,json,css,scss}}\"",
-    "format:fix:staged": "pretty-quick --staged",
-    "format:fix:all": "npm run format:check -- --write && npm run lint:scss -- --fix && npm run lint:ts:fix",
-    "precommit": "npm run format:fix:staged && npm run lint"
+    "postrelease": "yarn packagr",
+    "lint:fix": "yarn stylelint -- --fix && yarn nglint -- --fix && yarn prettier -- --write",
+    "nglint": "ng lint",
+    "stylelint": "stylelint --syntax scss \"src/**/*.{css,scss}\"",
+    "prettier": "prettier --config .prettierrc -l \"src/**/*.{ts,js,json,css,scss}\""
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@angular/core": ">= 6.0.0",
+    "rxjs": ">= 6.0.0"
+  },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.5",
     "@angular/animations": "^6.0.3",
@@ -68,6 +69,8 @@
     "codelyzer": "^4.3.0",
     "core-js": "^2.4.1",
     "coveralls": "^3.0.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "husky": "^1.1.0",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -78,22 +81,22 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "karma-spec-reporter": "0.0.31",
     "ng-packagr": "^2.4.5",
+    "prettier": "^1.14.3",
     "protractor": "~5.1.2",
     "rxjs": "^6.2.0",
     "standard-version": "^4.3.0",
+    "stylelint": "^9.6.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-order": "^1.0.0",
+    "stylelint-scss": "^3.3.1",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.7.2",
     "zone.js": "^0.8.26",
-    "husky": "^0.14.3",
-    "prettier": "^1.11.1",
-    "pretty-quick": "^1.4.1",
-    "stylelint": "^9.2.0",
-    "stylelint-order": "^0.8.1",
-    "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-scss": "^3.0.0",
-    "cz-conventional-changelog": "^2.1.0"
+    "lint-staged": "^7.3.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "tslint-config-prettier": "^1.15.0"
   },
   "ngPackage": {
     "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
@@ -108,5 +111,24 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "tslint --fix",
+      "git add"
+    ],
+    "src/**/*.{css,scss}": [
+      "stylelint --syntax scss --fix",
+      "git add"
+    ],
+    "src/**/*.{ts,js,json,css,scss}": [
+      "prettier --config .prettierrc --write",
+      "git add"
+    ]
   }
 }

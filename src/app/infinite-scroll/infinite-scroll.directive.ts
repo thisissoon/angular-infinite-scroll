@@ -5,7 +5,7 @@ import {
   HostListener,
   EventEmitter,
   Input,
-  Output
+  Output,
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil, filter, map } from 'rxjs/operators';
@@ -28,7 +28,7 @@ import * as events from './shared/events';
  *
  */
 @Directive({
-  selector: '[snInfiniteScroll]'
+  selector: '[snInfiniteScroll]',
 })
 export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
   /**
@@ -73,7 +73,7 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
           return { y, height: scroll.height };
         }),
         filter(() => !this.disabled),
-        filter(scroll => scroll.y >= scroll.height)
+        filter(scroll => scroll.y >= scroll.height),
       )
       .subscribe(() => this.scrollEnd.emit());
   }
@@ -84,7 +84,7 @@ export class InfiniteScrollDirective implements AfterViewInit, OnDestroy {
   public onScroll(
     scrollY: number,
     scrollheight: number,
-    offsetHeight: number
+    offsetHeight: number,
   ): void {
     const height = scrollheight;
     const y = scrollY + offsetHeight;
