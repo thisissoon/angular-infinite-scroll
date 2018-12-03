@@ -1,6 +1,6 @@
 {
   "name": "@thisissoon/angular-infinite-scroll",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "private": false,
   "description": "Simple, lightweight infinite scrolling directive for Angular which emits an event when an element has been scrolled to the bottom",
   "keywords": [
