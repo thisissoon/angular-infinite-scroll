@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.1.0"></a>
+# [2.1.0](https://github.com/thisissoon/angular-infinite-scroll/compare/v2.0.1...v2.1.0) (2018-12-04)
+
+
+### Features
+
+* add support for angular 7 ([e86933b](https://github.com/thisissoon/angular-infinite-scroll/commit/e86933b))
+
+
+
 <a name="2.0.1"></a>
 ## [2.0.1](https://github.com/thisissoon/angular-infinite-scroll/compare/v2.0.0...v2.0.1) (2018-12-03)
 
