@@ -39,7 +39,7 @@
     "packagr": "ng-packagr -p package.json",
     "release": "standard-version",
     "postrelease": "yarn packagr",
-    "lint:fix": "yarn stylelint -- --fix && yarn nglint -- --fix && yarn prettier -- --write",
+    "lint:fix": "yarn stylelint --fix && yarn nglint --fix && yarn prettier --write",
     "nglint": "ng lint",
     "stylelint": "stylelint --syntax scss \"src/**/*.{css,scss}\"",
     "prettier": "prettier --config .prettierrc -l \"src/**/*.{ts,js,json,css,scss}\""
